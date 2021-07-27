@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 const JWT_SIGN_SECRET = "jeereq100MingandaTheBestGuysOfTheWorld100";
+
 module.exports = {
 	generateTokenForUSer: (userData) => {
 		return jwt.sign(

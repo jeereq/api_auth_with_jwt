@@ -14,7 +14,7 @@ module.exports = {
 		if (email == null || username == null || password == null)
 			return res.status(400).json({ error: "missing parameters" });
 
-		models.User.findOne({ attributes: ["email"], where: { email: email } })
+		models.User.findOne({ where: { email: email } })
 			.then((userFound) => {
 				if (userFound)
 					return res.status(409).json({ error: "user already exist" });
@@ -62,6 +62,21 @@ module.exports = {
 						});
 					else return res.status(403).json({ error: "invalid password" });
 				});
+			})
+			.catch((err) => {
+				return res.status(500).json({ error: "runable to vrify user" });
+			});
+	},
+	allUsers: (req, res) => {
+		const email = req.body.email;
+		const password = req.body.password;
+
+		if (email == null || password == null)
+			return res.status(400).json({ error: "missing parameters" });
+
+		models.User.findAll()
+			.then((findAll) => {
+				return res.status(200).json({ allUsers: findAll });
 			})
 			.catch((err) => {
 				return res.status(500).json({ error: "runable to vrify user" });
