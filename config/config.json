@@ -1,0 +1,23 @@
+{
+	"development": {
+		"username": "root",
+		"password": "jeereq",
+		"database": "database_development_sequelize",
+		"host": "127.0.0.1",
+		"dialect": "mysql"
+	},
+	"test": {
+		"username": "root",
+		"password": "jeereq",
+		"database": "database_test_sequelize",
+		"host": "127.0.0.1",
+		"dialect": "mysql"
+	},
+	"production": {
+		"username": "root",
+		"password": "jeereq",
+		"database": "database_production_sequelize",
+		"host": "127.0.0.1",
+		"dialect": "mysql"
+	}
+}
