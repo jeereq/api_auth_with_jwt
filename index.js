@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const apiRouter = require("./apiRouter").router;
 
+const port = process.env.PORT || 3500;
+
 const app = express();
 
 //bodyParser
@@ -16,6 +18,6 @@ app.get("/", (req, res) => {
 
 app.use("/api", apiRouter);
 
-app.listen(3500, () => {
+app.listen(port, () => {
 	console.log("yes");
 });
